@@ -1,0 +1,45 @@
+version: 2
+task_description: Explain storage formats of data types in OpenROAD
+created_by: nicklamb97
+domain: openroad
+seed_examples:
+  - question: What is the range for char and varchar data types in OpenROAD?
+    answer: |
+      The range for char and varchar data types in OpenROAD is 1 to 32000 bytes, or 1 to 16000 bytes in a UTF-8 instance.
+  - question: What is the range for the long varchar data type in OpenROAD?
+    answer: |
+      The range for the long varchar data type in OpenROAD is 1 to 2 GB bytes.
+  - question: What is the range for nchar and nvarchar (Unicode) data types in OpenROAD?
+    answer: |
+      The range for nchar and nvarchar (Unicode) data types in OpenROAD is 1 to 16,000 characters (32,000 bytes).
+  - question: What are the integer types supported in OpenROAD and their ranges?
+    answer: |
+      OpenROAD supports the following integer types:
+      1. integer1 (tinyint): -128 to +127
+      2. smallint (integer2): -32,768 to +32,767
+      3. integer (integer4): -2,147,483,648 to +2,147,483,647
+      4. integer8 (bigint): -9,223,372,036,854,775,808 to +9,223,372,036,854,775,807
+  - question: What is the default range for the decimal data type in OpenROAD?
+    answer: |
+      The default range for the decimal data type in OpenROAD is (5,0), which is from -99999 to +99999.
+  - question: What is the range and precision of the float4 data type in OpenROAD?
+    answer: |
+      The float4 data type in OpenROAD has a range of -1.0e+38 to +1.0e+38, with a precision of 7 digits.
+  - question: What is the size and range of the date(ingresdate) data type in OpenROAD?
+    answer: |
+      The date(ingresdate) data type in OpenROAD has a size of 12 bytes. Its range for absolute dates is 1-jan-0001 
+      to 30-dec-9999, and for time intervals is -9999 years to +9999 years.
+  - question: What is the size and range of the money data type in OpenROAD?
+    answer: |
+      The money data type in OpenROAD has a size of 8 bytes and a range of $-999,999,999,999.99 to $999,999,999,999.99.
+  - question: What is the range for the long byte data type in OpenROAD?
+    answer: |
+      The range for the long byte data type in OpenROAD is 1 to 2 GB of binary data.
+  - question: What is the maximum number of digits supported by the decimal data type in OpenROAD?
+    answer: |
+      The maximum number of digits supported by the decimal data type in OpenROAD is 39.
+document:
+  repo: https://github.com/nicklamb97/instructlab-data.git
+  commit: 7d6a56b
+  patterns:
+    - storage_formats_data_types.md

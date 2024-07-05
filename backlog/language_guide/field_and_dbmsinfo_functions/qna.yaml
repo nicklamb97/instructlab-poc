@@ -1,0 +1,55 @@
+version: 2
+task_description: Explain the Field and Dbmsinfo functions in OpenROAD programming language
+created_by: nicklamb97
+domain: openroad
+seed_examples:
+  - question: What is the purpose of the field function in OpenROAD?
+    answer: |
+      The field function in OpenROAD gives you access to the attributes of the object associated with a displayed 
+      field or menu item, rather than to the actual value of the field or menu item. It allows you to read or change 
+      attributes of the field object.
+  - question: Is the field function supported in SQL in OpenROAD?
+    answer: |
+      No, the field function is supported in 4GL but not in SQL in OpenROAD.
+  - question: How do you use the field function in OpenROAD?
+    answer: |
+      You use the field function by passing the variable name of the field as an argument to FIELD(). For example:
+      FIELD(temperature).TypeFace = TF_LUCIDA;
+      This would change the type face of the value settings on a slider field named 'temperature'.
+  - question: What's the difference between referencing a field variable directly and using the field function?
+    answer: |
+      When you reference a field variable directly (e.g., 'temperature'), you're accessing the current value of the 
+      field. When you use the field function (e.g., FIELD(temperature)), you're accessing the object that represents 
+      the field, allowing you to manipulate its attributes.
+  - question: What is the dbmsinfo function in OpenROAD?
+    answer: |
+      The dbmsinfo function in OpenROAD is used to retrieve various pieces of information about the database 
+      management system. However, its usage in OpenROAD has some specific restrictions.
+  - question: What is the only valid request_name for the dbmsinfo function when used as a standalone statement?
+    answer: |
+      When used as a standalone statement in OpenROAD, the only valid request_name for the dbmsinfo function is 
+      '_bintim'. For example: variable = dbmsinfo('_bintim')
+  - question: How can you use the dbmsinfo function to retrieve other information in OpenROAD?
+    answer: |
+      To retrieve other information using the dbmsinfo function in OpenROAD, you need to use it as part of a larger 
+      SQL statement. For example, to get the username:
+      select logname = dbmsinfo('username')
+  - question: What happens if you try to use dbmsinfo with a request_name other than '_bintim' in a standalone statement?
+    answer: |
+      If you try to use the dbmsinfo function with a request_name other than '_bintim' in a standalone statement in 
+      OpenROAD, it will return blanks. For example:
+      logname = dbmsinfo('username')
+      This statement will return blanks.
+  - question: Where can you find more examples and further discussion of the field function in OpenROAD?
+    answer: |
+      More examples and further discussion of the field function can be found in the "Creating Dynamic Frames" 
+      section of the Programming Guide for OpenROAD.
+  - question: Can the dbmsinfo function be used to retrieve the current user's name in a standalone statement?
+    answer: |
+      No, the dbmsinfo function cannot be used to retrieve the current user's name in a standalone statement in 
+      OpenROAD. To get the username, you must use dbmsinfo as part of a SQL select statement.
+document:
+  repo: https://github.com/nicklamb97/instructlab-data.git
+  commit: 4a8b282
+  patterns:
+    - field_and_dbmsinfo_functions.md
