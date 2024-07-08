@@ -1,3 +1,6 @@
 [submodule "taxonomy"]
 	path = taxonomy
 	url = https://github.com/nicklamb97/taxonomy.git
+[submodule "generated"]
+	path = generated
+	url = https://github.com/nicklamb97/generated.git
