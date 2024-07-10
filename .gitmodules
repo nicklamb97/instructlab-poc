@@ -4,3 +4,6 @@
 [submodule "generated"]
 	path = generated
 	url = https://github.com/nicklamb97/generated.git
+[submodule "instructlab_generated"]
+	path = instructlab-generated
+	url = https://github.com/nicklamb97/instructlab-generated.git
