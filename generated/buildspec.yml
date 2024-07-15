@@ -1,0 +1,43 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.10
+    commands:
+      - echo "Installing dependencies"
+      - pip install instructlab huggingface_hub
+  pre_build:
+    commands:
+      - echo "Cloning repositories"
+      - git clone https://github.com/nicklamb97/generated.git
+      - git clone https://github.com/nicklamb97/instructlab-config.git
+      - echo "Copying config file"
+      - cp instructlab-config/config.yaml .
+  build:
+    commands:
+      - echo "Hello World"
+      - echo "Downloading pre-trained model"
+      - ilab model download --repository=NickLamb/OpenROAD-7B-Instruct --filename=OpenROAD-7B-Instruct.Q4_K_M.gguf
+      - echo "Training model"
+      - ilab model train --num-epochs 20
+      - echo "Uploading to Hugging Face"
+      - |
+        python - <<EOF
+        from huggingface_hub import login, upload_folder
+        login(token="${HF_TOKEN}")
+        upload_folder(
+            folder_path="models",
+            path_in_repo="",
+            repo_id="NickLamb/OpenROAD-7B-Instruct",
+            repo_type="model"
+        )
+        EOF
+
+env:
+  variables:
+    HF_TOKEN: ${HF_TOKEN}
+
+artifacts:
+  files:
+    - '**/*'
