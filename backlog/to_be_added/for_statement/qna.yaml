@@ -1,0 +1,82 @@
+version: 2
+task_description: Explain the usage of the for statement in Actian OpenROAD 6.2.
+created_by: nicklamb97
+domain: openroad
+seed_examples:
+  - question: What is the purpose of the for statement in Actian OpenROAD 6.2?
+    answer: |
+      The for statement repeats a series of statements, incrementing or decrementing an index variable until a specified 
+      condition is met.
+  - question: What is the syntax for the for statement in Actian OpenROAD 6.2?
+    answer: |
+      The syntax for the for statement is:
+      ```4gl
+      [label:] for indexvariable = startexpression
+                      to|downto endexpression
+                      do statementlist
+              endfor;
+      ```
+  - question: How does the for statement work in Actian OpenROAD 6.2?
+    answer: |
+      The for statement repetitively executes statements in the statementlist, incrementing (to) or decrementing (downto)
+      the indexvariable until the endexpression is met.
+  - question: Can you nest for statements in Actian OpenROAD 6.2?
+    answer: |
+      Yes, you can nest for statements in Actian OpenROAD 6.2. Each nested loop can have its own index variable and range.
+  - question: How do you break out of a for loop in Actian OpenROAD 6.2?
+    answer: |
+      You can break out of a for loop using endloop, continue, resume, or return statements. Each serves a different 
+      purpose in exiting the loop.
+  - question: What does the endloop statement do in a for loop?
+    answer: |
+      The endloop statement closes the loop immediately and continues execution with the first statement following the 
+      endfor statement.
+  - question: What does the continue statement do in a for loop?
+    answer: |
+      The continue statement skips the remaining statements in the loop, increments or decrements the index variable, and 
+      begins the next iteration of the loop.
+  - question: How can you break out of nested for loops using labels?
+    answer: |
+      You can use labels with endloop and continue statements to specify which loop to break out of or continue. This helps
+      in controlling nested loops.
+  - question: What happens if you use the return statement in a for loop?
+    answer: |
+      The return statement terminates the current frame, procedure, or method, effectively ending the execution of the for 
+      loop.
+  - question: What are the parameters of the for statement?
+    answer: |
+      The for statement parameters include label, indexvariable, startexpression, endexpression, and statementlist, each 
+      defining specific aspects of the loop's execution.
+  - question: Can you provide an example of using the for statement to iterate through an array?
+    answer: |
+      Here is an example:
+      ```4gl
+      for i = 1 to array.Lastrow do
+           arr[i].PaymentReceived = TRUE;
+      endfor;
+      ```
+  - question: What is the role of the label parameter in the for statement?
+    answer: |
+      The label parameter identifies each for statement uniquely, allowing endloop or continue statements to reference 
+      specific loops in nested scenarios.
+  - question: What does the indexvariable parameter specify in the for statement?
+    answer: |
+      The indexvariable parameter specifies an integer variable that is incremented (to) or decremented (downto) after each
+      iteration of the for loop.
+  - question: How is the startexpression parameter used in the for statement?
+    answer: |
+      The startexpression parameter specifies an integer expression to which the indexvariable is set before the first 
+      iteration of the for loop.
+  - question: How is the endexpression parameter used in the for statement?
+    answer: |
+      The endexpression parameter specifies an integer expression against which the indexvariable is compared before each
+      iteration of the loop.
+  - question: What happens when the indexvariable exceeds the endexpression in a for loop?
+    answer: |
+      When the indexvariable exceeds (to) or becomes less than (downto) the endexpression, the for loop is terminated, 
+      stopping further iterations.
+document:
+  repo: https://github.com/nicklamb97/instructlab-data.git
+  commit: 7bc8f9e
+  patterns:
+    - for_statement.md
