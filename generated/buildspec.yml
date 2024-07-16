@@ -1,29 +1,29 @@
 version: 0.2
-
+env:
+  variables:
+    CUDA_HOME: "/usr/local/cuda"
 phases:
   install:
     runtime-versions:
       python: 3.10
     commands:
-      - echo "Installing dependencies"
-      - pip install instructlab huggingface_hub
+      - apt-get update && apt-get install -y cmake
   pre_build:
     commands:
-      - echo "Cloning repositories"
-      - git clone https://github.com/nicklamb97/generated.git
-      - git clone https://github.com/nicklamb97/instructlab-config.git
-      - echo "Copying config file"
-      - cp instructlab-config/config.yaml .
+      - echo "Installing CUDA Toolkit"
+      - wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.0-1_all.deb
+      - dpkg -i cuda-keyring_1.0-1_all.deb
+      - apt-get update
+      - apt-get install -y cuda-toolkit-11-8
+      - export PATH=/usr/local/cuda-11.8/bin${PATH:+:${PATH}}
+      - export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+      - nvcc --version
+      - nvidia-smi
   build:
     commands:
-      - echo "Hello World"
-      - echo "Downloading pre-trained model"
-      - ilab model download --repository=NickLamb/OpenROAD-7B-Instruct --filename=OpenROAD-7B-Instruct.Q4_K_M.gguf
-      - echo "Training model"
-      - ilab model train --num-epochs 20
       - echo "Uploading to Hugging Face"
-      - |
-        python - <<EOF
+      - pip install huggingface_hub
+      - python - <<EOF
         from huggingface_hub import login, upload_folder
         login(token="${HF_TOKEN}")
         upload_folder(
@@ -33,10 +33,6 @@ phases:
             repo_type="model"
         )
         EOF
-
-env:
-  variables:
-    HF_TOKEN: ${HF_TOKEN}
 
 artifacts:
   files:
