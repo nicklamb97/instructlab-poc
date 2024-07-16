@@ -1,0 +1,59 @@
+version: 2
+task_description: Introduce the inquire_4gl statement in Actian 4GL.
+created_by: nicklamb97
+domain: openroad
+seed_examples:
+  - question: What is the purpose of the inquire_4gl statement in Actian 4GL?
+    answer: |
+      The inquire_4gl statement retrieves information about an object or array, such as type name, array status,
+      and error information.
+  - question: What is the syntax for the inquire_4gl statement?
+    answer: |
+      The syntax is:
+      ```4gl
+      exec 4gl inquire_4gl(variable[:ind] = 4gl_constant [(array)]);
+      ```
+  - question: What information can the inquire_4gl statement return?
+    answer: |
+      It can return the object's type name, whether the structure is an array, error status and text from the
+      previous operation, and the number of rows in the array.
+  - question: What does the variable parameter specify in the inquire_4gl statement?
+    answer: |
+      The variable parameter specifies a 3GL variable.
+  - question: What does the array parameter specify in the inquire_4gl statement?
+    answer: |
+      The array parameter specifies the handle of the array.
+  - question: What does the 4gl_constant parameter specify in the inquire_4gl statement?
+    answer: |
+      The 4gl_constant parameter specifies a constant containing the information you are seeking from 4GL about
+      the object or array.
+  - question: What does the ind parameter specify in the inquire_4gl statement?
+    answer: |
+      The ind parameter specifies a null indicator variable.
+  - question: What constant can be used to get the total number of rows in the specified array?
+    answer: |
+      The constant `allrows` can be used to get the total number of rows, including deleted rows, in the array.
+  - question: What constant can be used to get the index of the first deleted row in the specified array?
+    answer: |
+      The constant `firstrow` can be used to get the index of the first (lowest-numbered) deleted row.
+  - question: What constant can be used to check if a structure is an array?
+    answer: |
+      The constant `IsArray` returns one if the structure is an array and zero if it is not.
+  - question: What constant can be used to get the number of non-deleted rows in the specified array?
+    answer: |
+      The constant `lastrow` can be used to get the number of non-deleted rows in the array.
+  - question: What constant can be used to get the name of the object type?
+    answer: |
+      The constant `RecordTypename` or `ClassName` can be used to get the name of the object type or the row type
+      in case of an array.
+  - question: What constant can be used to get the error number from the previous operation?
+    answer: |
+      The constant `errorno` can be used to get the error number for the previous operation. It is zero if the operation was OK.
+  - question: What constant can be used to get the error text from the previous operation?
+    answer: |
+      The constant `errortext` can be used to get the text associated with the error for the previous operation.
+document:
+  repo: https://github.com/nicklamb97/instructlab-data.git
+  commit: 11828ce
+  patterns:
+    - inquire_4gl_statement.md
