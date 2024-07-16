@@ -1,0 +1,46 @@
+version: 2
+task_description: Introduce the removerow statement in Actian 4GL.
+created_by: nicklamb97
+domain: openroad
+seed_examples:
+  - question: What is the purpose of the removerow statement in Actian 4GL?
+    answer: |
+      The removerow statement removes a row completely from an array in Actian 4GL.
+  - question: What is the syntax for the removerow statement?
+    answer: |
+      The syntax is:
+      ```4gl
+      exec 4gl removerow array (rownumber = integer);
+      ```
+  - question: What does the array parameter specify in the removerow statement?
+    answer: |
+      The array parameter specifies the handle of the array from which the row will be removed.
+  - question: What does the integer parameter specify in the removerow statement?
+    answer: |
+      The integer parameter specifies the row number of the row to be removed from the array.
+  - question: How does the removerow statement in Actian 4GL relate to the RemoveRow Method for the ArrayObject class?
+    answer: |
+      The removerow statement is similar to the RemoveRow Method for the ArrayObject class in Actian 4GL.
+  - question: Can the removerow statement be used to remove multiple rows at once?
+    answer: |
+      No, the removerow statement removes a single row at a time from the specified array.
+  - question: What happens if the specified row number in the removerow statement does not exist in the array?
+    answer: |
+      If the specified row number does not exist, the removerow statement will result in an error.
+  - question: Is it necessary to initialize the array before using the removerow statement?
+    answer: |
+      Yes, the array must be properly initialized and defined before using the removerow statement to remove rows.
+  - question: Can the removerow statement be used to remove rows from arrays with existing data?
+    answer: |
+      Yes, the removerow statement can be used to remove rows from arrays that already contain data.
+  - question: What is the significance of the rownumber parameter in the removerow statement?
+    answer: |
+      The rownumber parameter specifies the position of the row to be removed from the array.
+  - question: Does the removerow statement in Actian 4GL support conditional removal of rows?
+    answer: |
+      No, the removerow statement removes the specified row without any conditions. Conditional logic must be handled separately.
+document:
+  repo: https://github.com/nicklamb97/instructlab-data.git
+  commit: 3486329
+  patterns:
+    - removerow_statement.md
