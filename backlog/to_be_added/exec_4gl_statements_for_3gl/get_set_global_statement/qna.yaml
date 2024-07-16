@@ -1,0 +1,65 @@
+
+ersion: 2
+task_description: Introduce the get global and set global statements in Actian 4GL.
+created_by: nicklamb97
+domain: openroad
+seed_examples:
+  - question: What is the purpose of the get global statement in Actian 4GL?
+    answer: |
+      The get global statement retrieves a global variable from Actian 4GL into a 3GL variable.
+  - question: What is the syntax for the get global variable statement?
+    answer: |
+      The syntax is:
+      ```4gl
+      exec 4gl get global variable (:var[:ind] = name);
+      ```
+  - question: What is the purpose of the set global statement in Actian 4GL?
+    answer: |
+      The set global statement assigns a value from a 3GL variable to a global variable in Actian 4GL.
+  - question: What is the syntax for the set global variable statement?
+    answer: |
+      The syntax is:
+      ```4gl
+      exec 4gl set global variable (name = :var[:ind]);
+      ```
+  - question: What is the syntax for the get global constant statement?
+    answer: |
+      The syntax is:
+      ```4gl
+      exec 4gl get global constant (:var[:ind] = name);
+      ```
+  - question: What do the get global and set global statements enable in Actian 4GL?
+    answer: |
+      These statements enable 3GL code to access 4GL global variables and constants, including structured data.
+  - question: What does the var parameter specify in these statements?
+    answer: |
+      The var parameter specifies a 3GL variable.
+  - question: What does the ind parameter specify in these statements?
+    answer: |
+      The ind parameter specifies a 3GL null indicator variable.
+  - question: What does the name parameter specify in these statements?
+    answer: |
+      The name parameter specifies the name of the global variable or global constant being retrieved.
+  - question: Can you give an example of the get global variable statement?
+    answer: |
+      Example:
+      ```4gl
+      exec 4gl get global variable (:var1 = globalVar);
+      ```
+  - question: Can you give an example of the set global variable statement?
+    answer: |
+      Example:
+      ```4gl
+      exec 4gl set global variable (globalVar = :var2);
+      ```
+  - question: Can you give an example of the get global constant statement?
+    answer: |
+      Example:
+      ```4gl
+      exec 4gl get global constant (:var3 = globalConst);
+      ```
+document:
+  repo: https://github.com/nicklamb97/instructlab-data.git
+  commit: b3b1c63
+  patterns:
+    - get_set_global_statement.md
