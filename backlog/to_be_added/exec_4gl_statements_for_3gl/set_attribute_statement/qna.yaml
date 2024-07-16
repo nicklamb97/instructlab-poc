@@ -1,0 +1,54 @@
+version: 2
+task_description: Explain the set attribute statement in Actian 4GL.
+created_by: nicklamb97
+domain: openroad
+seed_examples:
+  - question: What is the set attribute statement in Actian 4GL?
+    answer: |
+      The set attribute statement sets one or more attributes of an object or array in Actian 4GL.
+  - question: What is the syntax of the set attribute statement in Actian 4GL?
+    answer: |
+      The syntax is:
+      ```4gl
+      exec 4gl set attribute object | array index
+                (attribute = :var[:ind])
+                [(attribute = :var)][:ind]];
+      exec 4gl set attribute object | array index using descriptor;
+      ```
+  - question: What does the object parameter specify in the set attribute statement?
+    answer: |
+      The object parameter specifies the handle of the object to which attributes are being set.
+  - question: What does the array parameter specify in the set attribute statement?
+    answer: |
+      The array parameter specifies the handle of the array to which attributes are being set.
+  - question: What is the purpose of the index parameter in the set attribute statement?
+    answer: |
+      The index parameter indicates the row number of the array variable where attributes are being set.
+  - question: How does the set attribute statement handle null indicators?
+    answer: |
+      The set attribute statement handles null indicators using the :ind syntax alongside attribute assignments.
+  - question: When should the 'using descriptor' form of the set attribute statement be used?
+    answer: |
+      The 'using descriptor' form is used to set attributes indicated in the SQLDA descriptor set up by the describe
+      statement.
+  - question: What type of variables can be assigned to attributes in the set attribute statement?
+    answer: |
+      Variables compatible with the types of the attributes defined in the object or array can be assigned using the
+      set attribute statement.
+  - question: Can the set attribute statement set multiple attributes simultaneously?
+    answer: |
+      Yes, the set attribute statement can set multiple attributes simultaneously using comma-separated attribute
+      assignments.
+  - question: What happens if the attribute specified in the set attribute statement does not exist in the object or
+     array?
+    answer: |
+      If the attribute specified does not exist, the set attribute statement will result in a runtime error.
+  - question: How does the set attribute statement contribute to application development in Actian 4GL?
+    answer: |
+      The set attribute statement simplifies the process of assigning values to object or array attributes,
+      facilitating efficient data management in Actian 4GL applications.
+document:
+  repo: https://github.com/nicklamb97/instructlab-data.git
+  commit: 3d5d634
+  patterns:
+    - set_attribute_statement.md
