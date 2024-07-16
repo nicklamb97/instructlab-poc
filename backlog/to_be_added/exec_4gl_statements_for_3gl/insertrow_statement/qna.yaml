@@ -1,0 +1,46 @@
+version: 2
+task_description: Introduce the insertrow statement in Actian 4GL.
+created_by: nicklamb97
+domain: openroad
+seed_examples:
+  - question: What is the purpose of the insertrow statement in Actian 4GL?
+    answer: |
+      The insertrow statement adds a new row, containing default data, to an array in Actian 4GL.
+  - question: What is the syntax for the insertrow statement?
+    answer: |
+      The syntax is:
+      ```4gl
+      exec 4gl insertrow array (rownumber = integer);
+      ```
+  - question: What does the array parameter specify in the insertrow statement?
+    answer: |
+      The array parameter specifies the handle of the array where the new row will be inserted.
+  - question: What does the integer parameter specify in the insertrow statement?
+    answer: |
+      The integer parameter specifies the number of the row to be added to the array.
+  - question: What kind of data does the new row contain when inserted using the insertrow statement?
+    answer: |
+      The new row inserted by the insertrow statement contains default data.
+  - question: How does the insertrow statement in Actian 4GL relate to the InsertRow Method for the ArrayObject class?
+    answer: |
+      The insertrow statement is similar to the InsertRow Method for the ArrayObject class in Actian 4GL.
+  - question: Can the insertrow statement be used to add multiple rows at once?
+    answer: |
+      No, the insertrow statement adds a single row at a time to the specified array.
+  - question: What happens if the specified row number in the insertrow statement already exists in the array?
+    answer: |
+      The insertrow statement adds the new row at the specified position, shifting subsequent rows down if necessary.
+  - question: Is it necessary to initialize the array before using the insertrow statement?
+    answer: |
+      Yes, the array must be properly initialized and defined before using the insertrow statement to insert rows.
+  - question: Can the insertrow statement be used to insert rows in arrays with existing data?
+    answer: |
+      Yes, the insertrow statement can be used to insert rows into arrays that already contain data.
+  - question: What is the significance of the rownumber parameter in the insertrow statement?
+    answer: |
+      The rownumber parameter specifies the position at which the new row will be inserted in the array.
+document:
+  repo: https://github.com/nicklamb97/instructlab-data.git
+  commit: 1e43ca2
+  patterns:
+    - insertrow_statement.md
