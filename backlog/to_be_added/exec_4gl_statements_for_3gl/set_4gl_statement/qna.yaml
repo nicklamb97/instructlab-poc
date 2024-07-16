@@ -1,0 +1,46 @@
+version: 2
+task_description: Explain the set_4gl statement in Actian 4GL.
+created_by: nicklamb97
+domain: openroad
+seed_examples:
+  - question: What is the purpose of the set_4gl statement in Actian 4GL?
+    answer: |
+      The set_4gl statement controls error message display in Actian 4GL.
+  - question: What is the syntax of the set_4gl statement in Actian 4GL?
+    answer: |
+      The syntax is:
+      ```4gl
+      exec 4gl set_4gl(messages = value);
+      ```
+  - question: How does the set_4gl statement affect error reporting in Actian 4GL?
+    answer: |
+      It turns error reporting on or off for EXEC 4GL statements based on the value parameter.
+  - question: What does the value parameter signify in the set_4gl statement?
+    answer: |
+      The value parameter, set to 1, displays error messages; set to 0, it suppresses them.
+  - question: When would you typically use the set_4gl statement in Actian 4GL?
+    answer: |
+      Developers use set_4gl to manage error message visibility during application development and debugging.
+  - question: What is the default behavior of the set_4gl statement in Actian 4GL?
+    answer: |
+      By default, errors from EXEC 4GL statements are displayed when using set_4gl.
+  - question: How does the set_4gl statement contribute to error handling in Actian 4GL applications?
+    answer: |
+      It enhances error handling by allowing developers to control when and how errors are displayed in the
+      application interface.
+  - question: Can the set_4gl statement be used to suppress error messages completely?
+    answer: |
+      Yes, by setting the value parameter to 0, developers can suppress error messages from EXEC 4GL statements.
+  - question: What role does error management play in Actian 4GL application development?
+    answer: |
+      Effective error management ensures robustness and reliability in Actian 4GL applications, enhancing user
+      experience and operational efficiency.
+  - question: How does the set_4gl statement align with Actian 4GL's error handling capabilities?
+    answer: |
+      The set_4gl statement is integral to Actian 4GL's comprehensive error handling framework, allowing fine-grained
+      control over error message display.
+document:
+  repo: https://github.com/nicklamb97/instructlab-data.git
+  commit: 106f3fe
+  patterns:
+    - set_4gl_statement.md
