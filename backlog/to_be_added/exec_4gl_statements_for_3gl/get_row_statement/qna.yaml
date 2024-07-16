@@ -1,0 +1,46 @@
+version: 2
+task_description: Introduce the getrow statement in Actian 4GL.
+created_by: nicklamb97
+domain: openroad
+seed_examples:
+  - question: What is the purpose of the getrow statement in Actian 4GL?
+    answer: |
+      The getrow statement retrieves a row from an array, specifically the 3GL object handle for a given array member.
+  - question: What is the syntax for the getrow statement?
+    answer: |
+      The syntax is:
+      ```4gl
+      exec 4gl getrow array index (:object = row);
+      ```
+  - question: What does the array parameter specify in the getrow statement?
+    answer: |
+      The array parameter specifies the handle of the array.
+  - question: What does the index parameter specify in the getrow statement?
+    answer: |
+      The index parameter specifies the index number of the variable. It indicates the row of the array to be accessed.
+  - question: What does the object parameter specify in the getrow statement?
+    answer: |
+      The object parameter specifies a 4-byte handle for the object.
+  - question: Can you give an example of the getrow statement?
+    answer: |
+      Example:
+      ```4gl
+      exec 4gl getrow myArray 5 (:myObject = row);
+      ```
+  - question: How does the getrow statement facilitate interaction between 3GL and 4GL in Actian?
+    answer: |
+      The getrow statement allows 3GL code to access 4GL array members by obtaining the 3GL object handle for a specified array member.
+  - question: What is the role of handles in the getrow statement?
+    answer: |
+      Handles are used to reference 3GL objects in Actian 4GL, allowing interaction between different programming environments.
+  - question: What type of data does the getrow statement retrieve?
+    answer: |
+      The getrow statement retrieves a 3GL object handle for a specified array member, enabling manipulation of the object in 3GL.
+  - question: How is the index parameter used in the getrow statement?
+    answer: |
+      The index parameter is used to specify which row of the array to access, based on the index number provided.
+document:
+  repo: https://github.com/nicklamb97/instructlab-data.git
+  commit: 14bb7a8
+  patterns:
+    - getrow_statement.md
