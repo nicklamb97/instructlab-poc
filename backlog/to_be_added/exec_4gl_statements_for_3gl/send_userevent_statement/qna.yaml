@@ -1,0 +1,50 @@
+version: 2
+task_description: Introduce the send userevent statement in Actian 4GL.
+created_by: nicklamb97
+domain: openroad
+seed_examples:
+  - question: What is the purpose of the send userevent statement in Actian 4GL?
+    answer: |
+      The send userevent statement sends a userevent with a given name to the specified frame with optional parameters.
+  - question: What is the syntax for the send userevent statement?
+    answer: |
+      The syntax is:
+      ```4gl
+      exec 4gl send userevent frame (eventname = :strvar
+                                    [, messageobject = :objvar]
+                                    [, messageinteger = :intvar]
+                                    [, messagefloat = :fltvar]
+                                    [, messagevarchar = :strvar]
+                                    [, focusbehavior = :strvar]
+                                    [, delay = :fltvar]);
+      ```
+  - question: What does the frame parameter specify in the send userevent statement?
+    answer: |
+      The frame parameter specifies the object handle of the frame this userevent is being sent to.
+  - question: What does the eventname parameter specify in the send userevent statement?
+    answer: |
+      The eventname parameter specifies the name of the userevent to be sent.
+  - question: What is the purpose of the messageobject parameter in the send userevent statement?
+    answer: |
+      The messageobject parameter lets you pass a 4-byte object handle to the receiving frame.
+  - question: How does the focusbehavior parameter affect the send userevent statement?
+    answer: |
+      The focusbehavior defines what validation behavior should take place when the userevent is processed.
+  - question: What are the possible values for the focusbehavior parameter in the send userevent statement?
+    answer: |
+      The possible values for focusbehavior are FT_SETVALUE, FT_TAKEFOCUS, and FT_NOSETVALUE.
+  - question: What is the purpose of the delay parameter in the send userevent statement?
+    answer: |
+      The delay parameter specifies the number of seconds to wait before triggering the userevent.
+  - question: Can the send userevent statement include multiple message parameters?
+    answer: |
+      Yes, the send userevent statement can include multiple message parameters such as messageobject, messageinteger,
+      messagefloat, and messagevarchar.
+  - question: What happens if the specified frame handle in the send userevent statement is invalid?
+    answer: |
+      If the specified frame handle is invalid, the send userevent statement will result in an error.
+document:
+  repo: https://github.com/nicklamb97/instructlab-data.git
+  commit: 85a8d24
+  patterns:
+    - send_userevent_statement.md
