@@ -1,0 +1,58 @@
+version: 2
+task_description: Explain the Describe Statement in Actian 4GL and its application.
+created_by: nicklamb97
+domain: openroad
+seed_examples:
+  - question: What is the describe statement in Actian 4GL?
+    answer: |
+      The describe statement in Actian 4GL retrieves a list of the attributes of a class or array.
+
+  - question: What is the syntax for the describe statement in Actian 4GL?
+    answer: |
+      The syntax is: exec 4gl describe object into descriptor;
+
+  - question: What does the describe statement do in Actian 4GL?
+    answer: |
+      The describe statement creates descriptors for the object's or array's attributes in the SQLDA structure specified by the descriptor.
+
+  - question: What is the object parameter in the describe statement?
+    answer: |
+      The object parameter specifies the handle of the object or array to be described. This parameter is an integer.
+
+  - question: What is the descriptor parameter in the describe statement?
+    answer: |
+      The descriptor parameter specifies the name of the descriptor for the SQLDA.
+
+  - question: Can the describe statement be used with arrays in Actian 4GL?
+    answer: |
+      Yes, for an array, the describe statement generates descriptors for the type of the array's rows.
+
+  - question: What type of value does the object parameter in the describe statement take?
+    answer: |
+      The object parameter takes an integer value that specifies the handle of the object or array to be described.
+
+  - question: How are descriptors created by the describe statement stored?
+    answer: |
+      Descriptors created by the describe statement are stored in the SQLDA structure specified by the descriptor.
+
+  - question: Provide an example of the describe statement syntax.
+    answer: |
+      An example syntax is: exec 4gl describe object objectHandle into descriptorName;
+
+  - question: What is the purpose of using the describe statement in Actian 4GL?
+    answer: |
+      The purpose is to dynamically obtain metadata about an object's or array's attributes, useful for applications that adapt to different data structures at runtime.
+
+  - question: What structure does the describe statement use to store descriptors?
+    answer: |
+      The describe statement uses the SQLDA structure to store descriptors.
+
+  - question: What is the significance of the SQLDA in the describe statement?
+    answer: |
+      The SQLDA (SQL Descriptor Area) is the structure where the describe statement stores the descriptors for the object's or array's attributes.
+
+document:
+  repo: https://github.com/nicklamb97/instructlab-data.git
+  commit: 221da40
+  patterns:
+   - describe_statement.md
