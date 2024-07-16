@@ -1,0 +1,24 @@
+version: 2
+task_description: Explain the Actian 4GL clear array statement and its usage.
+created_by: nicklamb97
+domain: actian
+seed_examples:
+  - question: What does the clear array statement do in Actian 4GL?
+    answer: |
+      The clear array statement in Actian 4GL removes all rows from a specified array.
+  - question: What is the syntax of the clear array statement in Actian 4GL?
+    answer: |
+      The syntax of the clear array statement in Actian 4GL is:
+      ```
+      exec 4gl clear array arr;
+      ```
+      Where `arr` is the handle of the array to be cleared, specified as a 4-byte integer.
+  - question: How is the clear array statement similar to other programming languages?
+    answer: |
+      The clear array statement in Actian 4GL functions similarly to the Clear method used with the ArrayObject class
+      in other programming languages.
+document:
+  repo: https://github.com/nicklamb97/instructlab-data.git
+  commit: cce23b3
+  patterns:
+    - clear_array_statement.md
