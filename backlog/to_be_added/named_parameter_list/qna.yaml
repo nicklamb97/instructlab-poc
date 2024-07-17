@@ -1,0 +1,28 @@
+version: 2
+task_description: Introduce the NamedParameterList in Actian 4GL and its syntax.
+created_by: nicklamb97
+domain: openroad
+seed_examples:
+  - question: What is a NamedParameterList in Actian 4GL?
+    answer: |
+      A NamedParameterList in Actian 4GL specifies values passed as parameters with parameter names. Each parameter
+      is linked with an expression or passed by reference, allowing dynamic parameter passing.
+  - question: What is the syntax of a NamedParameterList?
+    answer: |
+      The syntax of a NamedParameterList in Actian 4GL is:
+      ```4gl
+      parameter = expression | byref(variable)
+              {, parameter = expression | byref(variable)}
+      ```
+      - `parameter`: Name of the parameter in the called procedure, frame, or method.
+      - `expression`: Legal 4GL expression evaluating to the appropriate data type.
+      - `byref(variable)`: Passes `variable` to the called procedure, frame, or method by reference.
+  - question: How does a NamedParameterList enhance parameter passing in Actian 4GL?
+    answer: |
+      NamedParameterList enhances parameter passing by allowing developers to explicitly specify parameters with
+      associated expressions or by reference, providing clarity and flexibility in method invocation.
+document:
+  repo: https://github.com/nicklamb97/instructlab-data.git
+  commit: 5c294b7
+  patterns:
+    - named_parameter_list.md
