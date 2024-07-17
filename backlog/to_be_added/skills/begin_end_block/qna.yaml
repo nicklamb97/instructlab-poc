@@ -1,0 +1,164 @@
+version: 2
+
+task_description: Introduce the usage of the BeginEndBlock in Actian 4GL OpenROAD 6.2, covering syntax, nesting, and integration with control structures.
+
+created_by: openai
+
+domain: openroad
+
+seed_examples:
+
+  - question: How to define a basic block of statements using the begin and end keywords in 4GL?
+
+    answer: |
+      In 4GL, you can define a block of statements using the begin and end keywords as follows:
+
+      ```
+      begin
+         call proc1();
+         call proc2();
+         call proc3();
+      end;
+      ```
+
+  - question: Write code to demonstrate using curly braces to delimit a block of statements in 4GL.
+
+    answer: |
+      In 4GL, you can also use curly braces to delimit a block of statements:
+
+      ```
+      {
+         call proc1();
+         call proc2();
+         call proc3();
+      };
+      ```
+
+  - question: How to nest BeginEndBlocks within other BeginEndBlocks in 4GL?
+
+    answer: |
+      You can nest BeginEndBlocks to structure complex logic in 4GL:
+
+      ```
+      begin
+         call proc1();
+         begin
+            call proc2();
+            call proc3();
+         end;
+         call proc4();
+      end;
+      ```
+
+  - question: Demonstrate using a BeginEndBlock within a for loop in 4GL.
+
+    answer: |
+      You can use BeginEndBlocks within a for loop to group multiple statements:
+
+      ```
+      for i = 1 to 5 do
+         begin
+            call proc1();
+            call proc2();
+         end;
+      endfor;
+      ```
+
+  - question: How to handle multiple statements within an if statement using BeginEndBlock in 4GL?
+
+    answer: |
+      Use BeginEndBlocks to handle multiple statements in an if statement:
+
+      ```
+      if condition then
+         begin
+            call proc1();
+            call proc2();
+         end;
+      endif;
+      ```
+
+  - question: Show an example of variable scope within a BeginEndBlock in 4GL.
+
+    answer: |
+      Variables declared inside a BeginEndBlock are local to that block:
+
+      ```
+      begin
+         declare localVar integer;
+         localVar = 10;
+         call proc1(localVar);
+      end;
+      ```
+
+  - question: How does the BeginEndBlock affect program flow in 4GL?
+
+    answer: |
+      BeginEndBlock groups statements together, ensuring they execute sequentially:
+
+      ```
+      begin
+         call proc1();
+         call proc2();
+         call proc3();
+      end;
+      ```
+
+  - question: Demonstrate using BeginEndBlock for error handling in 4GL.
+
+    answer: |
+      Use BeginEndBlock to group statements in error handling routines:
+
+      ```
+      begin
+         on error
+            call handleError();
+         enderror;
+
+         call proc1();
+         call proc2();
+      end;
+      ```
+
+  - question: How to combine BeginEndBlock with while loop in 4GL?
+
+    answer: |
+      Use BeginEndBlock inside a while loop to execute multiple statements:
+
+      ```
+      while condition do
+         begin
+            call proc1();
+            call proc2();
+         end;
+      endwhile;
+      ```
+
+  - question: Provide an example of using BeginEndBlock for conditional execution of multiple statements.
+
+    answer: |
+      Use BeginEndBlock for executing multiple statements based on a condition:
+
+      ```
+      if condition then
+         begin
+            call proc1();
+            call proc2();
+         end;
+      else
+         begin
+            call proc3();
+            call proc4();
+         end;
+      endif;
+      ```
+
+document:
+
+  repo: https://github.com/nicklamb97/instructlab-data.git
+
+  commit: 9cd0660
+
+  patterns:
+
+   - begin_end_block.md
