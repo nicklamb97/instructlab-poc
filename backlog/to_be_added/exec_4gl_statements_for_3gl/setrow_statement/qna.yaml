@@ -1,0 +1,44 @@
+version: 2
+task_description: Explain the setrow statement in Actian 4GL.
+created_by: nicklamb97
+domain: openroad
+seed_examples:
+  - question: What is the purpose of the setrow statement in Actian 4GL?
+    answer: |
+      The setrow statement sets a row in an array to point at a specific object in Actian 4GL.
+  - question: What is the syntax of the setrow statement in Actian 4GL?
+    answer: |
+      The syntax is:
+      ```4gl
+      exec 4gl setrow array index (row = :object);
+      ```
+  - question: How does the setrow statement function in Actian 4GL?
+    answer: |
+      The setrow statement assigns a particular object to a specified row in an array using its handle.
+  - question: What is the role of the array parameter in the setrow statement?
+    answer: |
+      The array parameter specifies the handle of the array to be modified.
+  - question: What does the index parameter signify in the setrow statement?
+    answer: |
+      The index parameter specifies the row number in the array that will be set to point to the object.
+  - question: What is the purpose of the object parameter in the setrow statement?
+    answer: |
+      The object parameter specifies a 4-byte handle for the object that will be set in the array.
+  - question: When would you typically use the setrow statement in Actian 4GL?
+    answer: |
+      Developers use setrow to dynamically assign objects to specific rows in arrays during application execution.
+  - question: How does the setrow statement enhance data handling in Actian 4GL applications?
+    answer: |
+      The setrow statement provides flexibility in managing data within arrays, allowing dynamic assignment of objects.
+  - question: Can the setrow statement be used to update existing rows in an array?
+    answer: |
+      Yes, the setrow statement can update existing rows in an array by assigning new objects to specified rows.
+  - question: What is a practical example of using the setrow statement in Actian 4GL?
+    answer: |
+      A practical example is using setrow to dynamically populate an array with different data objects based on user
+      input or application state.
+document:
+  repo: https://github.com/nicklamb97/instructlab-data.git
+  commit: 110ad7e
+  patterns:
+    - setrow_statement.md
