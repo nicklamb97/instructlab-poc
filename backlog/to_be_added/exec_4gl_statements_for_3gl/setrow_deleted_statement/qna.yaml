@@ -1,0 +1,43 @@
+version: 2
+task_description: Explain the setrow deleted statement in Actian 4GL.
+created_by: nicklamb97
+domain: openroad
+seed_examples:
+  - question: What does the setrow deleted statement do in Actian 4GL?
+    answer: |
+      The setrow deleted statement marks a non-deleted array row as a deleted row in Actian 4GL.
+  - question: What is the syntax of the setrow deleted statement in Actian 4GL?
+    answer: |
+      The syntax is:
+      ```4gl
+      exec 4gl setrow deleted array (rownumber = integer);
+      ```
+  - question: How does the setrow deleted statement function in Actian 4GL?
+    answer: |
+      The setrow deleted statement changes the status of a specified row in an array to indicate it has been deleted.
+  - question: What is the role of the array parameter in the setrow deleted statement?
+    answer: |
+      The array parameter specifies the handle of the array to be modified.
+  - question: What does the integer parameter signify in the setrow deleted statement?
+    answer: |
+      The integer parameter specifies the number of the row to be deleted within the array.
+  - question: When would you typically use the setrow deleted statement in Actian 4GL?
+    answer: |
+      Developers use the setrow deleted statement to mark rows as deleted without actually removing them from the array.
+  - question: How does the setrow deleted statement enhance data handling in Actian 4GL applications?
+    answer: |
+      The setrow deleted statement provides a way to mark rows as deleted, allowing for better data management and processing.
+  - question: Can the setrow deleted statement be used to undelete a row in an array?
+    answer: |
+      No, the setrow deleted statement only marks rows as deleted; it does not provide functionality to undelete rows.
+  - question: What is a practical example of using the setrow deleted statement in Actian 4GL?
+    answer: |
+      A practical example is using setrow deleted to mark rows for deletion based on certain conditions without immediately removing them.
+  - question: How is the setrow deleted statement similar to the SetRowDeleted Method for the ArrayObject class?
+    answer: |
+      Both the setrow deleted statement and the SetRowDeleted Method mark rows as deleted in an array.
+document:
+  repo: https://github.com/nicklamb97/instructlab-data.git
+  commit: 326276c
+  patterns:
+    - setrow_deleted_statement.md
