@@ -1,0 +1,45 @@
+version: 2
+task_description: Explain the BeginEndBlock statement in Actian 4GL.
+created_by: nicklamb97
+domain: openroad
+seed_examples:
+  - question: What does the BeginEndBlock statement do in Actian 4GL?
+    answer: |
+      The BeginEndBlock statement specifies a block of statements surrounded by the `begin` and `end` keywords or curly braces (`{...}`).
+  - question: What is the syntax for the BeginEndBlock statement in Actian 4GL?
+    answer: |
+      The syntax is:
+      ```4gl
+      begin | {
+                [statementlist]
+      end | }
+      ```
+  - question: What are the keywords used to define a BeginEndBlock in Actian 4GL?
+    answer: |
+      The keywords used to define a BeginEndBlock are `begin` and `end`, or alternatively, curly braces (`{...}`).
+  - question: What does the statementlist parameter represent in the BeginEndBlock syntax?
+    answer: |
+      The statementlist parameter represents the list of statements to be executed within the BeginEndBlock.
+  - question: Can curly braces be used instead of begin and end keywords in a BeginEndBlock?
+    answer: |
+      Yes, curly braces (`{...}`) can be used as an alternative to the `begin` and `end` keywords in a BeginEndBlock.
+  - question: What is the purpose of using a BeginEndBlock in Actian 4GL?
+    answer: |
+      The purpose of using a BeginEndBlock is to group multiple statements into a single block, which can be executed together.
+  - question: How does the BeginEndBlock enhance code readability in Actian 4GL?
+    answer: |
+      The BeginEndBlock enhances code readability by clearly delineating the start and end of a block of statements.
+  - question: Can nested BeginEndBlocks be used in Actian 4GL?
+    answer: |
+      Yes, nested BeginEndBlocks can be used to create blocks within blocks, providing structured and organized code.
+  - question: What is a practical example of using a BeginEndBlock in Actian 4GL?
+    answer: |
+      A practical example is using a BeginEndBlock to execute a series of related database operations as a single unit.
+  - question: How does the BeginEndBlock relate to C# in terms of syntax?
+    answer: |
+      The BeginEndBlock in Actian 4GL is similar to using curly braces in C# to define a block of statements.
+document:
+  repo: https://github.com/nicklamb97/instructlab-data.git
+  commit: 9cd0660
+  patterns:
+    - begin_end_block.md
